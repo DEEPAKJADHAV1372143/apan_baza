@@ -1,0 +1,39 @@
+
+<section class="design">
+    <div class="row justify-content-center ">
+        <div class="m-5 p-5 col-md-3 shadow2 text-white">
+            <div class="text-center">
+                <img src="./../../../assets/imgcc/logo2.png" alt="" width="140" height="140" class=" border rounded-circle">
+            </div>
+            <h2 class="text-center py-2">Farmer Login</h2>
+            <form [formGroup]="formData" (ngSubmit)="onSubmit()" method="post">
+              <div class="">
+                <label class="form-label"> Email</label>
+                <input type="email" formControlName="email" class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required"> email is required</div>
+                </div>
+            </div>
+
+                 <div class="">
+                    <label class="form-label">Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+                <div class="form-group form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Remember me
+                  </label>
+                </div>
+                <p class="text-right">
+                    <a [routerLink]="['/auth/registration']"  class="text-primary">Registration Now</a>
+                </p>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+</section>

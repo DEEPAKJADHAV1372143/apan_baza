@@ -1,0 +1,11 @@
+.nav-item{
+    text-align: left !important;
+}
+.borderx{
+    border: 9px solid white;
+}
+.fixed-right{
+    position: fixed;
+    top: 7px;
+    right: 17px;
+}

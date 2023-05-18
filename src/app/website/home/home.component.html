@@ -1,0 +1,141 @@
+
+
+<app-header></app-header>
+
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+      <li data-target="#demo" data-slide-to="3"></li>
+      <li data-target="#demo" data-slide-to="4"></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./../../../assets/ban/ban (1).jpg" alt="f f" width="1100" height="500">
+        <div class="carousel-caption">
+            <h3>Apana Bazar Here Everone can sale there product</h3>
+          <p>Fruits are the means by which flowering plants (also known as angiosperms) disseminate their seeds. Edible fruits in particular have long propagated using the movements of humans and animals in a symbiotic relationship that is the means for seed dispersal for the one group and nutrition for the other; in fact, humans and many animals have become dependent on fruits as a source of food.[1] Consequently, fruits account for a substantial fraction of the world's agricultural output, and some (such as the apple and the pomegranate) have acquired extensive cultural and symbolic meanings</p>
+        </div>   
+      </div>
+      <div class="carousel-item">
+        <img src="./../../../assets/ban/ban (2).jpg" alt="f" width="1100" height="500">
+        <div class="carousel-caption">
+            <h3>Dry Fruits</h3>
+          <p>Fruits are the means by which flowering plants (also known as angiosperms) disseminate their seeds. Edible fruits in particular have long propagated using the movements of humans and animals in a symbiotic relationship that is the means for seed dispersal for the one group and nutrition for the other; in fact, humans and many animals have become dependent on fruits as a source of food.[1] Consequently, fruits account for a substantial fraction of the world's agricultural output, and some (such as the apple and the pomegranate) have acquired extensive cultural and symbolic meanings</p>
+        </div>   
+      </div>
+      <div class="carousel-item">
+        <img src="./../../../assets/ban/ban (3).jpg" alt="f f" width="1100" height="500">
+        <div class="carousel-caption">
+          <h3>Vegitables Fruits</h3>
+          <p>Fruits are the means by which flowering plants (also known as angiosperms) disseminate their seeds. Edible fruits in particular have long propagated using the movements of humans and animals in a symbiotic relationship that is the means for seed dispersal for the one group and nutrition for the other; in fact, humans and many animals have become dependent on fruits as a source of food.[1] Consequently, fruits account for a substantial fraction of the world's agricultural output, and some (such as the apple and the pomegranate) have acquired extensive cultural and symbolic meanings</p>
+        </div>   
+      </div>
+      <div class="carousel-item">
+        <img src="./../../../assets/ban/ban (4).jpg" alt="f f" width="1100" height="500">
+        <div class="carousel-caption">
+          <h3>Noramal Fruits</h3>
+          <p>Fruits are the means by which flowering plants (also known as angiosperms) disseminate their seeds. Edible fruits in particular have long propagated using the movements of humans and animals in a symbiotic relationship that is the means for seed dispersal for the one group and nutrition for the other; in fact, humans and many animals have become dependent on fruits as a source of food.[1] Consequently, fruits account for a substantial fraction of the world's agricultural output, and some (such as the apple and the pomegranate) have acquired extensive cultural and symbolic meanings</p>
+        </div>   
+      </div>
+      <div class="carousel-item">
+        <img src="./../../../assets/ban/ban (5).jpg" alt="f f" width="1100" height="500">
+        <div class="carousel-caption">
+          <h3>Dry Fruits</h3>
+          <p>Fruits are the means by which flowering plants (also known as angiosperms) disseminate their seeds. Edible fruits in particular have long propagated using the movements of humans and animals in a symbiotic relationship that is the means for seed dispersal for the one group and nutrition for the other; in fact, humans and many animals have become dependent on fruits as a source of food.[1] Consequently, fruits account for a substantial fraction of the world's agricultural output, and some (such as the apple and the pomegranate) have acquired extensive cultural and symbolic meanings</p>
+        </div>   
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div class="input-group p-3">
+        <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search Your Product Here">
+        <div class="input-group-append">
+          <button class="btn btn-success">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="p-5">
+  <h3 class="">Dry Fruits Product</h3>
+  <hr>
+</div>
+
+
+
+<section class="row justify-content-center">
+    <div class="col-md-2 p-4 m-4   table-secondary" *ngFor="let item of dry_fruit| filter: searchText">
+            <div class=" text-center" >
+                <img [src]="item.prod_img" alt="d" width="100%" height="200">
+                <h4 class="text-center text-capitalize py-2">{{item.prod_name}}</h4>
+                <b class="text-success">{{item.prod_prise}}$ Per/KG</b>
+                <p>Avilable {{item.prod_quantity}}</p>
+                <div class="text-right">
+                    <button class="btn btn-warning btn-sm text-white" (click)="order_req(item.id,item.userId)">Buy Now</button>
+                </div>
+            </div>
+    </div>
+</section> 
+
+<div class="p-5">
+  <h3 class="">Fruits Product</h3>
+  <hr>
+</div>
+
+<section class="row justify-content-center">
+    <div class="col-md-2 p-4 m-4   table-warning" *ngFor="let item of fruit | filter: searchText">
+            <div class=" text-center" >
+                <img [src]="item.prod_img" alt="d" width="100%" height="200">
+                <h4 class="text-center text-capitalize py-2">{{item.prod_name}}</h4>
+                <b class="text-success">{{item.prod_prise}}$ Per/KG</b>
+                <p>Avilable {{item.prod_quantity}}</p>
+                <div class="text-right">
+                    <button class="btn btn-warning btn-sm text-white" (click)="order_req(item.id,item.userId)">Buy Now</button>
+                </div>
+            </div>
+    </div>
+</section> 
+
+
+<div class="p-5">
+  <h3 class="">Vegitables Product</h3>
+  <hr>
+</div>
+
+<section class="row justify-content-center">
+    <div class="col-md-2 p-4 m-4   table-info" *ngFor="let item of vegitables | filter: searchText">
+            <div class=" text-center" >
+                <img [src]="item.prod_img" alt="d" width="100%" height="200">
+                <h4 class="text-center text-capitalize py-2">{{item.prod_name}}</h4>
+                <b class="text-success">{{item.prod_prise}}$ Per/KG</b>
+                <p>Avilable {{item.prod_quantity}}</p>
+                <div class="text-right">
+                    <button class="btn btn-warning btn-sm text-white" (click)="order_req(item.id,item.userId)">Buy Now</button>
+                </div>
+            </div>
+    </div>
+</section> 
+
+
+
+<app-footer></app-footer>
+
+
+
+
+

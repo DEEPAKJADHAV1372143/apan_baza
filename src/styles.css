@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+.row{
+    margin: 0px;
+    padding: 0px;
+}
+.bg-green{
+    background-color: #5cfc30;
+    color: white;
+}

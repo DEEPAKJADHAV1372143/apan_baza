@@ -1,0 +1,20 @@
+
+
+
+<section class="p-3">
+  <h2>My Profile</h2>
+  <hr>
+  <div class="row p-5 m-5 shadow">
+    <div class="col-md-6">
+      <h4 class="bg-primary p-2 text-white">Details</h4><hr>
+      <p><b>Name :</b> {{logedUserData[0].name}}</p>
+      <p><b>Email :</b> {{logedUserData[0].email}}</p>
+      <p><b>Contact :</b> {{logedUserData[0].contact}}</p>
+      <p><b>Address :</b> {{logedUserData[0].address}}</p>
+      <p><b>Bank Account :</b> {{logedUserData[0].banck_acc}}</p>
+    </div>
+    <div class="col-md-6">
+      <img [src]="logedUserData[0].photo" alt="" class="img-thumbnail">
+    </div>
+  </div>
+</section>

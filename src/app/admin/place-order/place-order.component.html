@@ -1,0 +1,32 @@
+<div class="">
+    <h2>Our Order Deteils</h2>
+    <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>            
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>id </th>       
+          <th>prod_id  </th>   
+          <th>farmer_id </th>   
+          <th>order_name  </th>    
+          <th>order_email  </th>   
+          <th>order_contact   </th>  
+          <th>order_address  </th>   
+          <th>order_status   </th>  
+          <th>date     </th>        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of logedOrderData">
+            <td>{{item.id}} </td>       
+            <td>{{item.prod_id}}  </td>   
+            <td>{{item.farmer_id}} </td>   
+            <td>{{item.order_name}}  </td>    
+            <td>{{item.order_email}}  </td>   
+            <td>{{item.order_contact}}   </td>  
+            <td>{{item.order_address}}  </td>   
+            <td>{{item.order_status }}  </td>  
+            <td>{{item.date  }}   </td>  
+        </tr>
+      </tbody>
+    </table>
+  </div>

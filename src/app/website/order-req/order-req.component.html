@@ -1,0 +1,84 @@
+<app-header></app-header>
+
+    <!-- ==getOwnerDetails===== Contact Section ======= -->
+    <section id="contact" class="contact p-5">
+        <div class="container">
+          <h1 class="pt-5 pb-3 text-center"> Order Request</h1><hr>
+        <div class="row">
+          <div class="col-lg-3">
+            <img class="img-thumbnail" [src]="getOwnerDetails[0].photo" alt="">
+            <h5 class="text-primary">Name : {{getOwnerDetails[0].name}}</h5>
+            <b>Email : {{getOwnerDetails[0].email}}</b>
+            <p>Contact : {{getOwnerDetails[0].contact}}</p>
+            <p>Address : {{getOwnerDetails[0].address}}</p>
+            <p>ACC : {{getOwnerDetails[0].banck_acc}}</p>
+            
+         </div>
+         
+          <div class="col-lg-3">
+             <img class="img-thumbnail" [src]="getProdctDetails[0].prod_img" alt="">
+             <h4>Name : {{getProdctDetails[0].prod_name}}</h4>
+             <b class="text-success">Prise : {{getProdctDetails[0].prod_prise}}</b>
+             <p>Avilable : {{getProdctDetails[0].prod_quantity}}</p>
+             <p class="text-justify">Details : {{getProdctDetails[0].prod_dis}}.</p>
+          </div>
+  
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            
+            <form [formGroup]="formData" (ngSubmit)="onSubmit()" method="post">
+              
+              <div class="">
+                <label class="form-label">Customer Name</label>
+                <input type="text" formControlName="order_name" class="form-control" 
+                [ngClass]="{ 'is-invalid': submitted && f.order_name.errors }" />
+                <div *ngIf="submitted && f.order_name.errors" class="invalid-feedback">
+                    <div *ngIf="f.order_name.errors.required"> order_name is required</div>
+                </div>
+            </div>
+           
+          <div class="">
+            <label class="form-label">Customer Email</label>
+            <input type="email" formControlName="order_email" class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f.order_email.errors }" />
+            <div *ngIf="submitted && f.order_email.errors" class="invalid-feedback">
+                <div *ngIf="f.order_email.errors.required"> order_email is required</div>
+            </div>
+        </div>
+
+        <div class="">
+          <label class="form-label">Customer Contact</label>
+          <input type="number" formControlName="order_contact" class="form-control" 
+          [ngClass]="{ 'is-invalid': submitted && f.order_contact.errors }" />
+          <div *ngIf="submitted && f.order_contact.errors" class="invalid-feedback">
+              <div *ngIf="f.order_contact.errors.required"> order_contact is required</div>
+          </div>
+      </div>
+
+      <div class="">
+        <label class="form-label">Customer Address</label>
+        <input type="text" formControlName="order_address" class="form-control" 
+        [ngClass]="{ 'is-invalid': submitted && f.order_address.errors }" />
+        <div *ngIf="submitted && f.order_address.errors" class="invalid-feedback">
+            <div *ngIf="f.order_address.errors.required"> order_address is required</div>
+        </div>
+    </div>
+
+     <br>
+  
+              <button type="submit" class="btn btn-primary">Order Now</button>
+              <button type="reset" class="btn btn-danger mx-3">Cancle</button>
+            </form>
+          </div>
+  
+        </div>
+  
+
+        <div class="text-right p-4">
+          <button class="btn btn-secondary " (click)="print()">Print Document</button>
+        </div>
+
+        </div>
+      </section><!-- End Contact Section -->
+
+      
+<app-footer></app-footer>

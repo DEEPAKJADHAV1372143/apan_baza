@@ -1,0 +1,70 @@
+<section class="container ">
+  <form [formGroup]="productData"  method="post">
+    <h2 class="text-center p-3">Add Your Product here </h2><hr>
+    <div  class="row">
+        <div class="col-md-6   bg-white">
+          <div class="">
+            <label class="form-label"> Product name</label>
+            <input type="text" formControlName="prod_name" class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f.prod_name.errors }" />
+            <div *ngIf="submitted && f.prod_name.errors" class="invalid-feedback">
+                <div *ngIf="f.prod_name.errors.required"> Product name is required</div>
+            </div>
+        </div>
+        <div class="">
+          <label class="form-label"> Product Discription</label>
+          <input type="text" formControlName="prod_dis" class="form-control" 
+          [ngClass]="{ 'is-invalid': submitted && f.prod_dis.errors }" />
+          <div *ngIf="submitted && f.prod_dis.errors" class="invalid-feedback">
+              <div *ngIf="f.prod_dis.errors.required"> Product Discription is required</div>
+          </div>
+      </div>
+      <div class="">
+        <label class="form-label"> Product Quantity</label>
+        <input type="number" formControlName="prod_quantity" class="form-control" 
+        [ngClass]="{ 'is-invalid': submitted && f.prod_quantity.errors }" />
+        <div *ngIf="submitted && f.prod_quantity.errors" class="invalid-feedback">
+            <div *ngIf="f.prod_quantity.errors.required"> Product quantity is required</div>
+        </div>
+    </div>
+      <div class="">
+        <label class="form-label"> Product prise</label>
+        <input type="number" formControlName="prod_prise" class="form-control" 
+        [ngClass]="{ 'is-invalid': submitted && f.prod_prise.errors }" />
+        <div *ngIf="submitted && f.prod_prise.errors" class="invalid-feedback">
+            <div *ngIf="f.prod_prise.errors.required"> Product prise is required</div>
+        </div>
+    </div>
+    <div class="">
+      <label class="form-label"> Procuct Image</label>
+      <input type="text" formControlName="prod_img" class="form-control" 
+      [ngClass]="{ 'is-invalid': submitted && f.prod_img.errors }" />
+      <div *ngIf="submitted && f.prod_img.errors" class="invalid-feedback">
+          <div *ngIf="f.prod_img.errors.required"> Procuct Image is required</div>
+      </div>
+  </div>
+
+  <div class=" form-group">
+    <label class="form-label"> Type of  Product</label>
+      <select class="form-control"  formControlName="prodType" 
+      [ngClass]="{ 'is-invalid': submitted && f.prodType.errors }">
+        <option value=""> Select You Type</option>
+        <option value="fruit">Fruit </option>
+        <option value="dry_fruit">Dry_fruit  </option>
+        <option value="vegitables">Vegitables  </option>
+      </select>
+  
+    <div *ngIf="submitted && f.prodType.errors" class="invalid-feedback">
+        <div *ngIf="f.prodType.errors.required"> Type of xProcuct  is required</div>
+    </div>
+</div>
+          <br>
+          <button type="submit" (click)="addProduct(productData)" class="btn btn-primary">Add Product</button>
+          <button type="reset" class="btn btn-danger mx-3">Cancle</button>
+        
+  </div>
+    </div>
+  </form>
+</section>
+
+
